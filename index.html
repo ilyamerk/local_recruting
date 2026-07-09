@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>План локального рекрутинга — калькулятор</title>
+  <meta name="description" content="Веб-калькулятор планирования персонала ресторана: расчёт потребности в наборе по формулам SPMH / TCPH." />
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+  <header class="app-header">
+    <div class="brand">
+      <span class="brand-mark">ПЛР</span>
+      <div class="brand-text">
+        <h1>План локального рекрутинга</h1>
+        <p>Расчёт потребности в персонале по показателям т/о, SPMH и TCPH</p>
+      </div>
+    </div>
+    <div class="header-actions">
+      <button id="btn-help" class="btn btn-ghost" type="button" title="Как пользоваться">Инструкция</button>
+      <button id="btn-export" class="btn btn-ghost" type="button" title="Сохранить данные в файл">Экспорт</button>
+      <button id="btn-import" class="btn btn-ghost" type="button" title="Загрузить данные из файла">Импорт</button>
+      <button id="btn-print" class="btn btn-ghost" type="button" title="Печать / PDF">Печать</button>
+      <button id="btn-reset" class="btn btn-ghost btn-danger" type="button" title="Очистить всё">Сброс</button>
+      <input id="file-import" type="file" accept="application/json" hidden />
+    </div>
+  </header>
+
+  <nav id="tabs" class="tabs" aria-label="Объекты"></nav>
+
+  <main id="view" class="view"></main>
+
+  <div id="help-modal" class="modal" hidden>
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="help-title">
+      <div class="modal-head">
+        <h2 id="help-title">Как пользоваться калькулятором</h2>
+        <button class="btn btn-ghost" data-close type="button">✕</button>
+      </div>
+      <div class="modal-body" id="help-body"></div>
+    </div>
+  </div>
+
+  <footer class="app-footer">
+    <span>Данные сохраняются локально в вашем браузере (localStorage). Никуда не отправляются.</span>
+  </footer>
+
+  <script src="assets/model.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>
