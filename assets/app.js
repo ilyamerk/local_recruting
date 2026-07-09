@@ -628,6 +628,10 @@
     $('#help-modal').addEventListener('click', (e) => { if (e.target.dataset.close !== undefined) $('#help-modal').hidden = true; });
     document.addEventListener('keydown', (e) => { if (e.key === 'Escape') $('#help-modal').hidden = true; });
 
+    $('#btn-excel').onclick = () => {
+      try { PLRExport.download(state); }
+      catch (err) { alert('Не удалось сформировать Excel: ' + err.message); }
+    };
     $('#btn-export').onclick = () => {
       const blob = new Blob([JSON.stringify(state, null, 2)], { type: 'application/json' });
       const a = document.createElement('a');
