@@ -9,7 +9,12 @@
 статическим сервером / GitHub Pages). Сборка не требуется — чистый HTML/CSS/JS.
 
 **Онлайн (GitHub Pages):** https://ilyamerk.github.io/local_recruting/
-(публикуется автоматически при пуше в `main` через `.github/workflows/pages.yml`).
+
+Как включить (разовая настройка, делается один раз владельцем репозитория):
+Settings → Pages → Build and deployment → Source: **Deploy from a branch** →
+Branch: **main**, папка **/(root)** → Save. Через 1–2 минуты сайт станет доступен
+по адресу выше; при каждом пуше в `main` он обновляется автоматически.
+Файл `.nojekyll` отключает обработку Jekyll — статика отдаётся как есть.
 
 ---
 
@@ -121,5 +126,5 @@ assets/styles.css         — оформление (светлая/тёмная 
 assets/model.js           — движок расчёта (чистые функции, формулы Excel)
 assets/export-excel.js    — экспорт результата в Excel (SpreadsheetML)
 assets/app.js             — интерфейс: рендер таблиц, состояние, сохранение
-.github/workflows/pages.yml — автопубликация на GitHub Pages
+.nojekyll                 — отключает обработку Jekyll на GitHub Pages
 ```
